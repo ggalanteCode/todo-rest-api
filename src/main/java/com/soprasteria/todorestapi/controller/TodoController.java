@@ -55,7 +55,7 @@ public class TodoController {
 	@PostMapping("/inserttodo")
 	public ResponseEntity<Object> insertTodo(@RequestBody Todo todo) {
 		try {
-			return new ResponseEntity<Object>(todoService.createOrUpdateTodo(todo),HttpStatus.CREATED);
+			return new ResponseEntity<Object>(todoService.createTodo(todo),HttpStatus.CREATED);
 		} catch(Exception e) {
 			return new ResponseEntity<Object>("Error",HttpStatus.INTERNAL_SERVER_ERROR);
 		}
@@ -76,7 +76,7 @@ public class TodoController {
 		try {
 			Optional<Todo> findById = todoService.findTodoById(todo.getId());
 			if(findById.isPresent()) {
-				return new ResponseEntity<Object>(todoService.createOrUpdateTodo(todo), HttpStatus.OK);
+				return new ResponseEntity<Object>(todoService.updateTodo(todo), HttpStatus.OK);
 			} else {
 				return new ResponseEntity<Object>("Todo not found",HttpStatus.NOT_FOUND);
 			}

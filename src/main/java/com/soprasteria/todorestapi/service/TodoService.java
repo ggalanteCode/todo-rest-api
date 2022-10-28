@@ -26,13 +26,18 @@ public class TodoService {
 	}
 	
 	@Transactional
-	public Todo createOrUpdateTodo(Todo todo) {
+	public Todo createTodo(Todo todo) {
 		return todoRepository.save(todo);
 	}
 	
 	@Transactional
 	public void deleteTodoById(Integer id) {
 		todoRepository.deleteById(id);
+	}
+	
+	@Transactional
+	public Todo updateTodo(Todo todo) {
+		return todoRepository.save(todo);
 	}
 	
 	@Transactional
