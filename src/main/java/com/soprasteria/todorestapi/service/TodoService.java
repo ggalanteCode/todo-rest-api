@@ -26,7 +26,7 @@ public class TodoService {
 	}
 	
 	@Transactional
-	public Todo createTodo(Todo todo) {
+	public Todo createOrUpdateTodo(Todo todo) {
 		return todoRepository.save(todo);
 	}
 	

@@ -1,5 +1,6 @@
 package com.soprasteria.todorestapi.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +16,7 @@ public class Todo {
 	@NotNull(message = "todo cannot be null")
 	private String testoTodo;
 	@NotNull(message = "completato cannot be null")
-	private Boolean completato;
+	private Boolean completato = false;	//DEFAULT = FALSE
 	
 	public Integer getId() {
 		return id;
