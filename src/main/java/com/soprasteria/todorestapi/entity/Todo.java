@@ -16,5 +16,24 @@ public class Todo {
 	private String testoTodo;
 	@NotNull(message = "completato cannot be null")
 	private Boolean completato;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getTestoTodo() {
+		return testoTodo;
+	}
+	public void setTestoTodo(String testoTodo) {
+		this.testoTodo = testoTodo;
+	}
+	public Boolean getCompletato() {
+		return completato;
+	}
+	public void setCompletato(Boolean completato) {
+		this.completato = completato;
+	}
 
 }
